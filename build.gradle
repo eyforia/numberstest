@@ -23,3 +23,22 @@ test {
         exceptionFormat = 'full'
     }
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'App'
+    }
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'App'
+    }
+    baseName = project.name + '-all'
+    appendix =''
+    version=''
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    destinationDir="$rootDir/build" as File
+    with jar
+}

@@ -1,4 +1,7 @@
-package com.karneyenka.numberstest
+import com.karneyenka.numberstest.Dictionary
+import com.karneyenka.numberstest.PhoneNumber
+import com.karneyenka.numberstest.PhoneNumberFactory
+import com.karneyenka.numberstest.PhraseBuilder
 
 import static groovyx.gpars.GParsExecutorsPool.withPool
 
