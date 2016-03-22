@@ -1,10 +1,10 @@
-A buddy of mine has been asked to solve this problem during an interview.
+A buddy of mine has been asked to solve a programming task during an interview.
 
-I took the liberty of solving it using groovy, and using gradle instead of maven for the build.
-I also used gpars once to utilize multiple cores to get ~50% performance boost
+I think it's pretty cool so I took the liberty of solving it using groovy to see if it will take me less time than it took him to do it in java :-)
+
+I also used gradle instead of maven for the build and I used GParS to utilize multiple cores to get ~50% performance boost
 
 Here's the original task:
-
 
 <pre>
 Task description
