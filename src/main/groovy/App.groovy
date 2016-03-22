@@ -26,7 +26,7 @@ public class App {
             new FileInputStream(inputFileName)
                     .readLines()//iterate lines
                     .collectParallel { String line -> factory.create(line) } //convert lines to PhoneNumbers
-                    .findAll { PhoneNumber number -> number.phrases }  //find numbers with has phrases
+                    .findAll { PhoneNumber number -> number.aliases }  //find numbers with aliases
                     .each { PhoneNumber number -> println number.toString() } //print to output
         }
 

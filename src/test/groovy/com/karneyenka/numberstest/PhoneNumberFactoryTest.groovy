@@ -16,7 +16,7 @@ class PhoneNumberFactoryTest extends Specification {
         def result = input.text
                 .split() //iterate lines
                 .collect { String line -> factory.create(line) } //convert lines to PhoneNumbers
-                .findAll { PhoneNumber number -> number.phrases }    //find only numbers with phrases
+                .findAll { PhoneNumber number -> number.aliases }    //find only numbers with aliases
                 .collect { PhoneNumber word -> word.toString() } //convert to strings
                 .join("\n")
 

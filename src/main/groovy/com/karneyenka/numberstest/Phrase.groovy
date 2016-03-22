@@ -59,15 +59,11 @@ class Phrase {
         return result
     }
 
-    int size() {
-        return words.sum { Word word -> word.number.length() } as int
-    }
-
     boolean isValid() {
-        return !toString()
-                .replaceAll(" ", "")
-                .collectReplacements { char c -> Character.isDigit(c) ? '*' : null }
-                .contains("**")
+        return !toString()  //make sure does not have 2 consecutive digits
+                .replaceAll(" ", "")    //remove spaces
+                .collectReplacements { char c -> Character.isDigit(c) ? '*' : null }    //convert digits to *
+                .contains("**") //check if has 2 *
     }
 
     @Override

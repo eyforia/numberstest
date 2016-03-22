@@ -38,9 +38,6 @@ class Word {
         return this.number.startsWith(word.number)
     }
 
-    boolean isAlias() {
-        return this.value != this.number
-    }
 
     boolean isRawNumber() {
         return this.value == this.number

@@ -12,8 +12,8 @@ class PhoneNumberFactory {
 
     PhoneNumber create(String value) {
         String filteredValue = value.findAll { Character.isDigit(it as char) }.join("")    //filter non-digits
-        List<String> phrases = phraseBuilder.getPhrases(filteredValue)
-        return new PhoneNumber(value: value, phrases: phrases)
+        List<String> aliases = phraseBuilder.getAliases(filteredValue)
+        return new PhoneNumber(value: value, aliases: aliases)
     }
 
 }
