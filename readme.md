@@ -1,3 +1,12 @@
+A buddy of mine has been asked to solve this problem during an interview.
+
+I took the liberty of solving it using groovy, and using gradle instead of maven for the build.
+I also used gpars once to utilize multiple cores to get ~50% performance boost
+
+Here's the original task:
+
+
+<pre>
 Task description
 
 Attention: Please follow these instructions super accurately.
@@ -178,3 +187,4 @@ dictionary file or the phone number file.
 
 A large dictionary, which you can use for testing purposes, is available
 at dictionary.txt.
+</pre>
