@@ -36,12 +36,12 @@ class PhraseBuilder {
                     result.addAll(subResults)
                 }
             }
-        } else {    //cannot use alias - skip 1 char
-            Phrase substring = phrase.next() //skip 1 character forward
-            if (substring) {
-                def substringMatches = getPossibleMatches(substring, dictionary)
-                result.addAll(substringMatches)
-            }
+        }
+
+        Phrase substring = phrase.next() //skip 1 character forward
+        if (substring && substring.isPotentiallyValid()) {
+            def substringMatches = getPossibleMatches(substring, dictionary)
+            result.addAll(substringMatches)
         }
 
         return result

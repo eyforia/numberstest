@@ -66,6 +66,20 @@ class Phrase {
                 .contains("**") //check if has 2 *
     }
 
+    /**
+     * early detection if phrase is bad - has 2 consecutive raw numbers
+     * @return false if it's definitely bad
+     */
+    boolean isPotentiallyValid() {
+        Word previous = null
+        return !words.dropRight(1)//iterate all except last word (the one being modified with aliases)
+                .find { Word word ->    // stop on first match
+            boolean bad = previous && previous.isRawNumber() && word.isRawNumber()
+            previous = word
+            return bad
+        }
+    }
+
     @Override
     public String toString() {
         return words.collect { word -> word.value }.join(" ")

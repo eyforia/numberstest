@@ -19,6 +19,7 @@ class PhoneNumberFactoryTest extends Specification {
                 .findAll { PhoneNumber number -> number.aliases }    //find only numbers with aliases
                 .collect { PhoneNumber word -> word.toString() } //convert to strings
                 .join("\n")
+        println result
 
         then: "output is same as reference"
         result.readLines().sort() == referenceOutput.readLines().sort()
